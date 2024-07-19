@@ -18,13 +18,11 @@
     "component"
   ],
   "author": "Isak Hølleland",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/BenDis99/Hangman/issues"
   },
   "homepage": "https://github.com/BenDis99/Hangman#readme",
-  "dependencies": {
-  },
   "devDependencies": {
     "@babel/core": "^7.24.9",
     "@babel/preset-env": "^7.24.8",

@@ -154,7 +154,6 @@ const useGame = () => {
     }, [failedAttempts]);
     
     useEffect(()=> {
-        console.log("finished:", censorWord(word), censorWord(word).includes("_"));
         if(word && !censorWord(word).includes("_")) {
             setHasWon(true);
             setHasEnded(true);
