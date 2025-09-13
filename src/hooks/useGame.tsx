@@ -124,15 +124,15 @@ const wordDictionary = [
 const useGame = () => {
     // Should fetch random word from a dictionary (maybe vary by language)
     const [word, setWord] = useState("");
-    const [guessedLetters, setGuessedLetters] = useState([]);
-    const [failedAttempts, setFailedAttempts] = useState(0);
+    const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
+    const [failedAttempts, setFailedAttempts] = useState<number>(0);
     const [hasEnded, setHasEnded] = useState(false);
     const [hasWon, setHasWon] = useState(false);
 
-    const censorWord = (w) => w.split("").map(x => (guessedLetters.includes(x) || x === " " ? x : "_") + " ").join("");
+    const censorWord = (w: string) => w.split("").map(x => (guessedLetters.includes(x) || x === " " ? x : "_") + " ").join("");
     const newWord = () => setWord( wordDictionary[Math.floor( Math.random() * wordDictionary.length )]);
     
-    const guessLetter = async (letter) => {
+    const guessLetter = async (letter : string) => {
         if(!hasEnded && letter.length === 1){
             if(!word.includes(letter)) 
                 setFailedAttempts(failedAttempts+1);
